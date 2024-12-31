@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sponsors - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1>Our Sponsors</h1>
+        <p class="lead">Thank you to our generous sponsors who make this event possible!</p>
+    </div>
+
+    <!-- Platinum Sponsors -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Platinum Sponsors</h2>
+        <div class="row justify-content-center">
+            {% for sponsor in sponsors %}
+            {% if sponsor.tier == 'platinum' %}
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo mb-3">
+                        <h3 class="card-title">{{ sponsor.name }}</h3>
+                        <p class="card-text">{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn btn-primary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Gold Sponsors -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Gold Sponsors</h2>
+        <div class="row justify-content-center">
+            {% for sponsor in sponsors %}
+            {% if sponsor.tier == 'gold' %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo mb-3">
+                        <h4 class="card-title">{{ sponsor.name }}</h4>
+                        <p class="card-text">{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn btn-outline-primary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Silver Sponsors -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Silver Sponsors</h2>
+        <div class="row justify-content-center">
+            {% for sponsor in sponsors %}
+            {% if sponsor.tier == 'silver' %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo mb-3">
+                        <h5 class="card-title">{{ sponsor.name }}</h5>
+                        <p class="card-text small">{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bronze Sponsors -->
+    <div class="mb-5">
+        <h2 class="text-center mb-4">Bronze Sponsors</h2>
+        <div class="row justify-content-center">
+            {% for sponsor in sponsors %}
+            {% if sponsor.tier == 'bronze' %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo mb-3">
+                        <h5 class="card-title">{{ sponsor.name }}</h5>
+                        <p class="card-text small">{{ sponsor.description }}</p>
+                        <a href="{{ sponsor.website }}" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Become a Sponsor -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Become a Sponsor</h3>
+                    <p class="card-text">Join our distinguished group of sponsors and support innovation in healthcare data science.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tier</th>
+                                            <th>Benefits</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Platinum</td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Premium logo placement</li>
+                                                    <li>Speaking opportunity</li>
+                                                    <li>5 free registrations</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gold</td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Large logo display</li>
+                                                    <li>3 free registrations</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Silver</td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Medium logo display</li>
+                                                    <li>2 free registrations</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bronze</td>
+                                            <td>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Logo display</li>
+                                                    <li>1 free registration</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3">Contact Us About Sponsorship</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

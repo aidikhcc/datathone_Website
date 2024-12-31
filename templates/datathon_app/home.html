@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}KHCC Datathon & Workshop 2025{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>KHCC Datathon & Workshop</h1>
+        <h2 class="mb-4">April 11–17, 2025</h2>
+        <p class="lead mb-4">Join us for an exciting week of data science, healthcare innovation, and cultural experiences in Jordan!</p>
+        <a href="{% url 'registration' %}" class="btn btn-primary btn-lg">Register Now</a>
+    </div>
+</section>
+
+<!-- Key Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Event Overview -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Event Overview</h3>
+                        <p class="card-text">A week-long datathon and workshop focused on healthcare data analysis using the MIMIC database, hosted by King Hussein Cancer Center.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Venue -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Venue</h3>
+                        <p class="card-text">King Hussein Cancer Center, Amman, Jordan<br>(Subject to change - stay tuned for updates)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Registration -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Registration</h3>
+                        <ul class="list-unstyled">
+                            <li>Datathon: $100</li>
+                            <li>Workshop: $50</li>
+                            <li>Both Events: $150</li>
+                            <li><strong>50% discount for Jordanians</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Activities Preview -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Activities</h2>
+        <div class="row">
+            <!-- Wadi Rum + Petra -->
+            <div class="col-md-4 mb-4">
+                <div class="activity-card card">
+                    <img src="{% static 'images/wadi-rum.jpg' %}" class="card-img-top" alt="Wadi Rum">
+                    <div class="card-body">
+                        <h5 class="card-title">Wadi Rum + Petra Trip</h5>
+                        <p class="card-text">Experience the magic of Jordan's most iconic destinations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Falafel Dinner -->
+            <div class="col-md-4 mb-4">
+                <div class="activity-card card">
+                    <img src="{% static 'images/falafel.jpg' %}" class="card-img-top" alt="Falafel Dinner">
+                    <div class="card-body">
+                        <h5 class="card-title">Falafel Abujbarah Dinner</h5>
+                        <p class="card-text">Taste authentic Jordanian cuisine with fellow participants.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kickboxing -->
+            <div class="col-md-4 mb-4">
+                <div class="activity-card card">
+                    <img src="{% static 'images/kickboxing.jpg' %}" class="card-img-top" alt="Kickboxing">
+                    <div class="card-body">
+                        <h5 class="card-title">Kickboxing Session</h5>
+                        <p class="card-text">Stay energized with a fun workout session at KHCC.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'social_activities' %}" class="btn btn-secondary">View All Activities</a>
+        </div>
+    </div>
+</section>
+
+<!-- Sponsors Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Sponsors</h2>
+        <div class="row justify-content-center">
+            {% for sponsor in sponsors %}
+            <div class="col-md-2 col-sm-4 col-6 mb-4">
+                <a href="{{ sponsor.website }}" target="_blank" class="d-block text-center">
+                    <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo img-fluid">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'sponsors' %}" class="btn btn-outline-primary">View All Sponsors</a>
+        </div>
+    </div>
+</section>
+{% endblock %} 

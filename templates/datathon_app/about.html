@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1>About the Event</h1>
+        <p class="lead">A week-long journey of innovation, learning, and cultural exchange in healthcare data science.</p>
+    </div>
+
+    <!-- Overview -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Event Overview</h2>
+                    <p class="lead">The KHCC Datathon & Workshop brings together healthcare professionals, data scientists, and researchers to explore innovative solutions using the MIMIC database.</p>
+                    <p>This unique event combines hands-on learning, real-world problem-solving, and cultural experiences in the heart of Jordan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Components -->
+    <div class="row mb-5">
+        <!-- Datathon -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">The Datathon</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-database me-2"></i>
+                            <strong>MIMIC Database Access</strong><br>
+                            Work with real healthcare data in a secure environment
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-users me-2"></i>
+                            <strong>Team Configuration</strong><br>
+                            Collaborate in diverse teams of 3-5 members
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-laptop-code me-2"></i>
+                            <strong>Infrastructure</strong><br>
+                            Access to high-performance computing resources
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workshop -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">The Workshop</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-chalkboard-teacher me-2"></i>
+                            <strong>Expert Sessions</strong><br>
+                            Learn from MIT faculty and industry leaders
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-tools me-2"></i>
+                            <strong>Hands-on Training</strong><br>
+                            Practical sessions on data analysis tools
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-certificate me-2"></i>
+                            <strong>Certification</strong><br>
+                            Receive official recognition of participation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">Event Timeline</h3>
+                </div>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Day 1: April 11</h4>
+                                <ul>
+                                    <li>Opening Ceremony</li>
+                                    <li>Introduction to MIMIC Database</li>
+                                    <li>Team Formation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Days 2-3: April 12-13</h4>
+                                <ul>
+                                    <li>Workshop Sessions</li>
+                                    <li>Hands-on Training</li>
+                                    <li>Social Activities</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Days 4-5: April 14-15</h4>
+                                <ul>
+                                    <li>Datathon</li>
+                                    <li>Mentoring Sessions</li>
+                                    <li>Cultural Activities</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Days 6-7: April 16-17</h4>
+                                <ul>
+                                    <li>Project Presentations</li>
+                                    <li>Awards Ceremony</li>
+                                    <li>Closing Reception</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">MIT Involvement</h4>
+                    <p>Benefit from the expertise of MIT faculty and researchers who will guide you through the event.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">KHCC Foundation</h4>
+                    <p>Supported by the prestigious King Hussein Cancer Center Foundation, ensuring world-class facilities and resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">AIDI Office</h4>
+                    <p>Integration with KHCC's AI & Data Innovation office for real-world healthcare applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Venue Note -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h4 class="card-title">Venue Information</h4>
+                    <p class="card-text">The event will be held at the King Hussein Cancer Center in Amman, Jordan. Please note that the venue may be subject to change - we will keep all participants updated with any modifications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center">
+        <h3 class="mb-4">Ready to Join Us?</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'registration' %}" class="btn btn-primary btn-lg w-100">Register Now</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="{% url 'social_activities' %}" class="btn btn-secondary btn-lg w-100">View Activities</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+{% endblock %} 

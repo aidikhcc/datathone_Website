@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registration Successful - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 4rem;"></i>
+                    </div>
+                    <h1 class="card-title mb-4">Registration Successful!</h1>
+                    <p class="lead">Thank you for registering for the KHCC Datathon & Workshop.</p>
+                    <p>Your registration fee is: <strong>${{ fee|floatformat:2 }}</strong></p>
+                </div>
+            </div>
+
+            <!-- Payment Instructions -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4 class="mb-0">Payment Instructions</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <strong>Important:</strong> Your registration will be confirmed only after we receive your payment.
+                    </div>
+
+                    <h5 class="mb-3">Bank Transfer Details:</h5>
+                    <table class="table">
+                        <tr>
+                            <th>Bank Name:</th>
+                            <td>{{ bank_details.bank_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Account Holder:</th>
+                            <td>{{ bank_details.account_holder }}</td>
+                        </tr>
+                        <tr>
+                            <th>Account Number:</th>
+                            <td>{{ bank_details.account_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>SWIFT Code:</th>
+                            <td>{{ bank_details.swift_code }}</td>
+                        </tr>
+                    </table>
+
+                    <div class="mt-4">
+                        <h5>Next Steps:</h5>
+                        <ol>
+                            <li>Make the bank transfer for <strong>${{ fee|floatformat:2 }}</strong></li>
+                            <li>Send your payment proof to <a href="mailto:payments@khccdatathon.jo">payments@khccdatathon.jo</a></li>
+                            <li>Include your full name and email in the payment reference</li>
+                            <li>Wait for our confirmation email (usually within 2-3 business days)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's Next -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h4 class="mb-0">What's Next?</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            Check your email for registration details
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-file-alt me-2"></i>
+                            Review event information and schedule
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-hotel me-2"></i>
+                            Book your accommodation if needed
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-plane me-2"></i>
+                            Plan your travel to Jordan
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="{% url 'home' %}" class="btn btn-primary">Return to Homepage</a>
+                <a href="{% url 'social_activities' %}" class="btn btn-secondary">View Social Activities</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+{% endblock %} 

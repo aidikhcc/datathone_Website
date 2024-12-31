@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="registration-form">
+                <h1 class="text-center mb-4">Registration Form</h1>
+                
+                <!-- Fee Information -->
+                <div class="alert alert-info mb-4">
+                    <h5 class="alert-heading">Registration Fees:</h5>
+                    <ul class="mb-0">
+                        <li>Datathon Only: $100</li>
+                        <li>Workshop Only: $50</li>
+                        <li>Both Events: $150</li>
+                        <li><strong>50% discount for Jordanian participants</strong></li>
+                    </ul>
+                </div>
+
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        Please correct the errors below.
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Personal Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Personal Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="{{ form.full_name.id_for_label }}" class="form-label">Full Name *</label>
+                                {{ form.full_name }}
+                                {% if form.full_name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.full_name.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.email.id_for_label }}" class="form-label">Email *</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.email.errors }}
+                                </div>
+                                {% endif %}
+                                <div class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.phone.id_for_label }}" class="form-label">Phone Number *</label>
+                                    {{ form.phone }}
+                                    {% if form.phone.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.phone.errors }}
+                                    </div>
+                                    {% endif %}
+                                    <div class="form-text">{{ form.phone.help_text }}</div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.nationality.id_for_label }}" class="form-label">Nationality *</label>
+                                    {{ form.nationality }}
+                                    {% if form.nationality.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.nationality.errors }}
+                                    </div>
+                                    {% endif %}
+                                    <div class="form-text">{{ form.nationality.help_text }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Selection -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Event Selection</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="{{ form.event_choice.id_for_label }}" class="form-label">Choose Your Event(s) *</label>
+                                {{ form.event_choice }}
+                                {% if form.event_choice.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.event_choice.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Skills & Experience</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Select Your Skills *</label>
+                                <div class="row">
+                                    {% for choice in form.skill_choices %}
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            {{ choice }}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% if form.skill_choices.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.skill_choices.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Social Media (Optional)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.slack_username.id_for_label }}" class="form-label">Slack Username</label>
+                                    {{ form.slack_username }}
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.discord_username.id_for_label }}" class="form-label">Discord Username</label>
+                                    {{ form.discord_username }}
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.linkedin.id_for_label }}" class="form-label">LinkedIn Profile</label>
+                                    {{ form.linkedin }}
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="{{ form.twitter.id_for_label }}" class="form-label">Twitter Handle</label>
+                                    {{ form.twitter }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Activities -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Social Activities</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check mb-3">
+                                {{ form.wadi_rum_trip }}
+                                <label class="form-check-label" for="{{ form.wadi_rum_trip.id_for_label }}">
+                                    {{ form.wadi_rum_trip.label }}
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                {{ form.falafel_dinner }}
+                                <label class="form-check-label" for="{{ form.falafel_dinner.id_for_label }}">
+                                    {{ form.falafel_dinner.label }}
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                {{ form.kickboxing_session }}
+                                <label class="form-check-label" for="{{ form.kickboxing_session.id_for_label }}">
+                                    {{ form.kickboxing_session.label }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms and Conditions -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Terms & Conditions</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check mb-3">
+                                {{ form.terms_accepted }}
+                                <label class="form-check-label" for="{{ form.terms_accepted.id_for_label }}">
+                                    {{ form.terms_accepted.label }}
+                                </label>
+                                {% if form.terms_accepted.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ form.terms_accepted.errors }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+    // Form validation
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+{% endblock %}
+
+{% endblock %} 

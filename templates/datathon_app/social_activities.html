@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Social Activities - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1>Social Activities</h1>
+        <p class="lead">Experience Jordan's culture and natural wonders while networking with fellow participants!</p>
+    </div>
+
+    <!-- Activities -->
+    <div class="row">
+        {% for activity in activities %}
+        <div class="col-lg-4 mb-4">
+            <div class="activity-card card h-100">
+                <img src="{% static activity.image %}" class="card-img-top" alt="{{ activity.name }}">
+                <div class="card-body">
+                    <h3 class="card-title">{{ activity.name }}</h3>
+                    <p class="text-muted">{{ activity.date }}</p>
+                    <p class="card-text">{{ activity.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Detailed Information -->
+    <div class="row mt-5">
+        <!-- Wadi Rum + Petra -->
+        <div class="col-md-12 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Wadi Rum + Petra Trip Details</h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>Two-Day Adventure (April 15-16)</h4>
+                            <p class="lead">Experience two of Jordan's most iconic UNESCO World Heritage sites!</p>
+                            
+                            <h5 class="mt-4">Day 1: Wadi Rum</h5>
+                            <ul>
+                                <li>Desert jeep tour</li>
+                                <li>Rock formations and ancient inscriptions</li>
+                                <li>Traditional Bedouin lunch</li>
+                                <li>Sunset viewing</li>
+                                <li>Overnight in a desert camp (optional)</li>
+                            </ul>
+                            
+                            <h5 class="mt-4">Day 2: Petra</h5>
+                            <ul>
+                                <li>Guided tour of the ancient city</li>
+                                <li>Walk through the Siq</li>
+                                <li>Visit the Treasury and Monastery</li>
+                                <li>Traditional Jordanian lunch</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>Note:</strong> Additional cost applies. Details will be sent after registration.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>What to Bring:</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-hiking me-2"></i> Comfortable walking shoes</li>
+                                        <li><i class="fas fa-hat-cowboy me-2"></i> Sun hat</li>
+                                        <li><i class="fas fa-prescription-bottle me-2"></i> Water bottle</li>
+                                        <li><i class="fas fa-camera me-2"></i> Camera</li>
+                                        <li><i class="fas fa-suitcase me-2"></i> Overnight bag</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Falafel Dinner -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Falafel Abujbarah Dinner</h2>
+                    <hr>
+                    <p class="lead">Experience authentic Jordanian street food at one of Amman's most famous establishments!</p>
+                    
+                    <h5 class="mt-4">Details:</h5>
+                    <ul>
+                        <li>Date: April 12, 2025</li>
+                        <li>Time: 7:00 PM</li>
+                        <li>Location: Near KHCC (transportation provided)</li>
+                        <li>Duration: Approximately 2 hours</li>
+                    </ul>
+                    
+                    <div class="alert alert-success mt-4">
+                        <strong>Free Activity:</strong> Dinner is included for all participants!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kickboxing -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Kickboxing Session</h2>
+                    <hr>
+                    <p class="lead">Energize yourself with a fun workout session led by professional instructors!</p>
+                    
+                    <h5 class="mt-4">Details:</h5>
+                    <ul>
+                        <li>Date: April 12, 2025 (Day 2)</li>
+                        <li>Location: KHCC Fitness Center</li>
+                        <li>Duration: 45 minutes</li>
+                        <li>Suitable for all fitness levels</li>
+                    </ul>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h6>What to Bring:</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><i class="fas fa-tshirt me-2"></i> Comfortable workout clothes</li>
+                            <li><i class="fas fa-shoe-prints me-2"></i> Athletic shoes</li>
+                            <li><i class="fas fa-bottle-water me-2"></i> Water bottle</li>
+                            <li><i class="fas fa-towel me-2"></i> Small towel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Call to Action -->
+    <div class="text-center mt-5">
+        <div class="card bg-light">
+            <div class="card-body py-5">
+                <h3>Ready to Join the Fun?</h3>
+                <p class="lead mb-4">Select your preferred activities during registration!</p>
+                <a href="{% url 'registration' %}" class="btn btn-primary btn-lg">Register Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+{% endblock %} 

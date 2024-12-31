@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - KHCC Datathon & Workshop{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Hero Section -->
+            <div class="text-center mb-5">
+                <h1>Contact Us</h1>
+                <p class="lead">Have questions? We're here to help!</p>
+            </div>
+
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Get in Touch</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-phone me-2"></i>
+                                    <strong>Phone:</strong><br>
+                                    {{ contact_info.phone }}
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <strong>Address:</strong><br>
+                                    {{ contact_info.address }}
+                                </li>
+                            </ul>
+
+                            <h4 class="mt-4">Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="me-3" title="Twitter">
+                                    <i class="fab fa-twitter fa-2x"></i>
+                                </a>
+                                <a href="#" class="me-3" title="LinkedIn">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </a>
+                                <a href="#" class="me-3" title="Facebook">
+                                    <i class="fab fa-facebook fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Quick Links</h3>
+                            <div class="d-grid gap-2">
+                                <a href="{% url 'registration' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-user-plus me-2"></i>Register for the Event
+                                </a>
+                                <a href="{% url 'faq' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-question-circle me-2"></i>View FAQ
+                                </a>
+                                <a href="{% url 'social_activities' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-calendar-alt me-2"></i>Social Activities
+                                </a>
+                                <a href="{% url 'sponsors' %}" class="btn btn-outline-primary">
+                                    <i class="fas fa-handshake me-2"></i>Become a Sponsor
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Map -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">Our Location</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.1896321665087!2d35.8833!3d31.9833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDU5JzAwLjAiTiAzNcKwNTMnMDAuMCJF!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus"
+                            width="600"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">Office Hours</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sunday - Thursday</td>
+                                    <td>9:00 AM - 5:00 PM (Jordan Time)</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday - Saturday</td>
+                                    <td>Closed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-muted mt-2">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Note: Response times may vary during weekends and holidays.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+{% endblock %} 

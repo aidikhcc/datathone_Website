@@ -1,0 +1,209 @@
+:root {
+    --khcc-teal: #00A79D;
+    --khcc-pink: #E31E79;
+    --khcc-grey: #58595B;
+    --khcc-light-grey: #F5F5F5;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--khcc-grey);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--khcc-grey);
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--khcc-teal);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--khcc-teal);
+    border-color: var(--khcc-teal);
+}
+
+.btn-primary:hover {
+    background-color: #008C84;
+    border-color: #008C84;
+}
+
+.btn-secondary {
+    background-color: var(--khcc-pink);
+    border-color: var(--khcc-pink);
+}
+
+.btn-secondary:hover {
+    background-color: #C91B68;
+    border-color: #C91B68;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--khcc-light-grey);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--khcc-teal);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--khcc-light-grey);
+    padding: 2rem 0;
+}
+
+.footer h5 {
+    color: var(--khcc-teal);
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: var(--khcc-grey);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--khcc-pink);
+}
+
+/* Social Links */
+.social-links a {
+    color: var(--khcc-teal);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--khcc-pink);
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--khcc-teal);
+    box-shadow: 0 0 0 0.2rem rgba(0, 167, 157, 0.25);
+}
+
+/* Activity Cards */
+.activity-card {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.activity-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activity-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Sponsor Section */
+.sponsor-logo {
+    max-width: 200px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .activity-card img {
+        height: 150px;
+    }
+}
+
+/* Alert Messages */
+.alert {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #D4EDDA;
+    border-color: var(--khcc-teal);
+    color: #155724;
+}
+
+/* FAQ Section */
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    color: var(--khcc-teal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Registration Form */
+.registration-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--khcc-light-grey);
+    border-radius: 10px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--khcc-teal);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} 
