@@ -25,7 +25,11 @@ SECRET_KEY = "django-insecure-x9qpadms7j)+59&(_r544_o_(%ol(0@uaw)705d9-n-1(crifo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'khcc-datathon.azurewebsites.net',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
