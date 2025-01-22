@@ -15,11 +15,13 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3"> <!-- Changed from py-4 to py-5 for more height -->
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/khcc-logo.png' %}" alt="KHCC Logo" height="40">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                <img src="{% static 'images/khcc-logo.png' %}" alt="KHCC Logo" height="400">
+                
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
